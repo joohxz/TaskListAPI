@@ -6,4 +6,10 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\TaskList.API\TaskList.API.csproj" />
+    <ProjectReference Include="..\TaskList.Communication\TaskList.Communication.csproj" />
+    <ProjectReference Include="..\TaskList.Domain\TaskList.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
