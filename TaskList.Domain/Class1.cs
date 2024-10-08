@@ -1,4 +1,4 @@
-﻿namespace TaskList.Services
+﻿namespace TaskList.Domain
 {
     public class Class1
     {
