@@ -44,7 +44,7 @@ namespace TaskList.Services.Tarefas
             }
         }
 
-        public List<Tarefa> ListarTodasTarefas()
+        public IList<Tarefa> ListarTodasTarefas()
         {
             //var response = new Response();
             try

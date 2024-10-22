@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskList.Services", "TaskLi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskList.Communication", "TaskList.Communication\TaskList.Communication.csproj", "{C124F969-9FB7-418F-A83A-4A7B25639F38}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskList.Domain", "TaskList.Domain\TaskList.Domain.csproj", "{032995F5-A5E2-4813-942E-3E39C1616270}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskList.Domain", "TaskList.Domain\TaskList.Domain.csproj", "{032995F5-A5E2-4813-942E-3E39C1616270}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskList.Application", "TaskList.Application\TaskList.Application.csproj", "{B1AD9696-0E73-466C-872F-FCF266C275A9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{032995F5-A5E2-4813-942E-3E39C1616270}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{032995F5-A5E2-4813-942E-3E39C1616270}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{032995F5-A5E2-4813-942E-3E39C1616270}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1AD9696-0E73-466C-872F-FCF266C275A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1AD9696-0E73-466C-872F-FCF266C275A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1AD9696-0E73-466C-872F-FCF266C275A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1AD9696-0E73-466C-872F-FCF266C275A9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
