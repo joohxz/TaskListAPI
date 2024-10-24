@@ -1,14 +1,15 @@
-﻿using TaskList.Domain.Tarefas;
+﻿using TaskList.Communication.Responses;
+using TaskList.Domain.Tarefas;
 
 namespace TaskList.Services.Tarefas
 {
     public interface ITarefaService
     {
-        Tarefa CriarTarefa(Tarefa tarefa);
-        Tarefa ConsultarPorId(int id);
-        IList<Tarefa> ListarTodasTarefas();
-        Tarefa AtualizarTarefa(int id, TipoPrioridade prioridade, DateTime dataLimite, TipoStatus status);
-        void DeletarTarefa(int id);
+        Task<Response> CriarTarefa(Tarefa tarefa);
+        Task<Response> ConsultarPorId(int id);
+        Task<Response> ListarTodasTarefas();
+        Task<Response> AtualizarTarefa(int id, TipoPrioridade prioridade, DateTime dataLimite, TipoStatus status);
+        Task<Response> DeletarTarefa(int id);
 
     }
 }

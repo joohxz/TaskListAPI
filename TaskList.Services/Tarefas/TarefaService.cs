@@ -1,4 +1,8 @@
-﻿using TaskList.Domain.Tarefas;
+﻿using Microsoft.AspNetCore.Http;
+using TaskList.Communication.Responses;
+using TaskList.Domain.Tarefas;
+using Microsoft.AspNetCore.Mvc;
+
 
 namespace TaskList.Services.Tarefas
 {
@@ -8,8 +12,7 @@ namespace TaskList.Services.Tarefas
         private readonly List<Tarefa> tarefas = new List<Tarefa>();
         public Tarefa CriarTarefa(Tarefa tarefa)
         {
-            //Response
-            //var response = new Response();
+            var response = new Response();
 			try
 			{
                 var novaTarefa = new Tarefa(
@@ -22,16 +25,15 @@ namespace TaskList.Services.Tarefas
 
                 return novaTarefa;
 			}
-			catch (Exception ex)
+			catch (ArgumentException ex)
 			{
-                //Return response with error message
-                throw;
+                return response.BadRequest(ServiceConstants.ErroAoRegistrar);
 			}
         }
 
         public Tarefa ConsultarPorId(int id)
         {
-            //var response = new Response();
+            var response = new Response();
             try
             {
                 var tarefa = tarefas.FirstOrDefault(t => t.Id == id);
@@ -46,7 +48,7 @@ namespace TaskList.Services.Tarefas
 
         public IList<Tarefa> ListarTodasTarefas()
         {
-            //var response = new Response();
+            var response = new Response();
             try
             {
                 var todasTarefas = new List<Tarefa>(tarefas);
@@ -63,7 +65,7 @@ namespace TaskList.Services.Tarefas
 
         public Tarefa AtualizarTarefa(int id, TipoPrioridade prioridade, DateTime dataLimite, TipoStatus status)
         {
-            //var response = new Response();
+            var response = new Response();
             try
             {
                 var tarefa = tarefas.FirstOrDefault(t => t.Id == id);
@@ -71,7 +73,8 @@ namespace TaskList.Services.Tarefas
                         prioridade, 
                         dataLimite, 
                         status);
-                return tarefa;
+
+                return response(ServiceConstants.RegistradoComSucesso);
             }
             catch (Exception)
             {
@@ -82,7 +85,7 @@ namespace TaskList.Services.Tarefas
 
         public void DeletarTarefa(int id)
         {
-            //var response = new Response();
+            var response = new Response();
             try
             {
                 var tarefa = tarefas.FirstOrDefault(t => t.Id == id);
